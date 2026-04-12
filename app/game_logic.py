@@ -10,11 +10,12 @@ CENTER_INDEX = 12  # 5x5 grid, center is index 12 (row 2, col 2)
 
 def generate_board() -> list[BingoSquareData]:
     """Generate a new 5x5 bingo board."""
-    questions = iter(random.sample(QUESTIONS, 24))
+    questions: list[str] = list(random.sample(QUESTIONS, 24))
+    questions_iter = iter(questions)
     return [
         BingoSquareData(id=i, text=FREE_SPACE, is_marked=True, is_free_space=True)
         if i == CENTER_INDEX
-        else BingoSquareData(id=i, text=next(questions))
+        else BingoSquareData(id=i, text=next(questions_iter))
         for i in range(BOARD_SIZE * BOARD_SIZE)
     ]
 
