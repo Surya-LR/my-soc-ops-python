@@ -11,8 +11,15 @@
 
 ## Architecture
 - FastAPI backend, HTMX frontend, Jinja2 templates
-- Game logic in pp/game_logic.py, state in pp/game_service.py
-- Assets: pp/static/, templates: pp/templates/
+- Game logic in app/game_logic.py, state in app/game_service.py
+- Assets: app/static/, templates: app/templates/
+
+## Design Guide
+- Prefer warm, intentional UI systems over default utility output
+- Use CSS variables and shared utilities for consistent color, spacing, and shadows
+- Favor distinctive typography and subtle motion, not generic AI components
+- Keep interactions accessible and maintain good contrast
+- Reference .github/instructions/frontend-design.instructions.md for creative frontend guidance
 
 ## Build & Run
 - Dev server: uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
